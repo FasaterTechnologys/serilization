@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testapp/peremen.dart';
 import 'package:testapp/screens/login/login.dart';
@@ -14,15 +15,18 @@ getSLoadString(BuildContext context) async {
     password = stringValue1;
     String stringValue = prefs.getString('servic');
     servic = stringValue;
-    pass.text = password;
-    email.text = servic;
+    pass.text = password!;
+    email.text = servic!;
     ag = await getLoadList(context);
-    if (ag != null)
+    if (ag != null) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const StartScreen()));
+    } else {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => StartScreen()));
-    else
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+          context, MaterialPageRoute(builder: (context) => const Login()));
+    }
   } else {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Login()));
   }
 }

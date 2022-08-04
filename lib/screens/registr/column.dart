@@ -1,6 +1,4 @@
 import 'package:testapp/peremen.dart';
-import 'package:testapp/screens/registr/buttonregistr.dart';
-import 'package:testapp/screens/registr/registr.dart';
 import 'package:testapp/screens/registr/textfield.dart';
 import 'package:testapp/screens/registr/valid.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +25,7 @@ Widget columnvoid(BuildContext context, double height) {
       SizedBox(
         height: MediaQuery.of(context).size.height * height / 2,
       ),
-      proverka == true ? valid() : SizedBox(),
+      proverka == true ? valid() : const SizedBox(),
       SizedBox(
         height: MediaQuery.of(context).size.height * height / 2,
       ),

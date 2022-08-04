@@ -1,3 +1,5 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe, unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:testapp/peremen.dart';
 import 'package:http/http.dart' as http;
@@ -16,5 +18,5 @@ void zaprosreg(BuildContext context) async {
     },
   );
   Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Login()));
+      context, MaterialPageRoute(builder: (context) => const Login()));
 }

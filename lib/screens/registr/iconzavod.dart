@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget iconzavod(BuildContext context) {
-  return Container(
+  return SizedBox(
     width: MediaQuery.of(context).size.width *
         80 /
         MediaQuery.of(context).size.width,

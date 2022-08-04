@@ -11,26 +11,27 @@ import '../../peremen.dart';
 void loadhystory(BuildContext context) async {
   ht = await getHistoryList();
   Navigator.push(
-      context, MaterialPageRoute(builder: (context) => HistoryScreen()));
+      context, MaterialPageRoute(builder: (context) => const HistoryScreen()));
 }
 
-void load (BuildContext context) async {
-
+void load(BuildContext context) async {
   ag = await getLoadList(context);
-  if (ag != null)
-      Navigator.push(
-      context, MaterialPageRoute(builder: (context) => Profile()));
-    else
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));  
+  if (ag != null) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Profile()));
+  } else {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Login()));
+  }
 }
-
-
 
 Widget start(BuildContext context, IconData icon) {
   return GestureDetector(
-    onTap: (){Navigator.push(
-      context, MaterialPageRoute(builder: (context) => StartLoad()));},
-      child: Icon(icon,
+    onTap: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const StartLoad()));
+    },
+    child: Icon(icon,
         size: (MediaQuery.of(context).size.width +
                 MediaQuery.of(context).size.height) *
             0.04,
@@ -53,10 +54,10 @@ Widget history(BuildContext context, IconData icon) {
 
 Widget profile(BuildContext context, IconData icon) {
   return GestureDetector(
-    onTap: (){
+    onTap: () {
       load(context);
     },
-      child: Icon(icon,
+    child: Icon(icon,
         size: (MediaQuery.of(context).size.width +
                 MediaQuery.of(context).size.height) *
             0.04,

@@ -8,12 +8,13 @@ import 'package:testapp/screens/registr/registrtext.dart';
 import 'package:testapp/screens/registr/textfield.dart';
 import 'package:testapp/screens/registr/valid.dart';
 import 'package:testapp/screens/registr/zaprosreg.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:http/http.dart' as http;
 import 'package:testapp/peremen.dart';
 import 'package:flutter/material.dart';
 
 class Registr extends StatefulWidget {
-  Registr({Key key}) : super(key: key);
+  const Registr({Key? key}) : super(key: key);
 
   @override
   _RegistrState createState() => _RegistrState();
@@ -25,7 +26,7 @@ class _RegistrState extends State<Registr> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/backgroungimage.png"),
             fit: BoxFit.cover,
@@ -35,7 +36,6 @@ class _RegistrState extends State<Registr> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            
             logo(context, Colors.white),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.025,
@@ -55,16 +55,16 @@ class _RegistrState extends State<Registr> {
                   columnvoid(context, 0.017),
                   download == false
                       ? buttonlogin(context, "Войти")
-                      : CircularProgressIndicator(
+                      : const CircularProgressIndicator(
                           backgroundColor: Color.fromRGBO(196, 196, 196, 0.3),
                         ),
                 ],
               ),
             ),
-            Spacer(),
-            Spacer(),
+            const Spacer(),
+            const Spacer(),
             iconzavod(context),
-            Spacer(),
+            const Spacer(),
             accpred(context),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,

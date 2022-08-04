@@ -3,14 +3,12 @@ import 'package:testapp/screens/login/login.dart';
 import 'package:testapp/screens/login/textfield.dart';
 import 'package:testapp/serelization/historycreat.dart';
 import 'package:testapp/serelization/seril.dart';
-import 'package:testapp/serelization/seril.dart';
 
-import '../../loadservic.dart';
 import '../../logo.dart';
 import '../../peremen.dart';
 
 class PerevodeScreen extends StatefulWidget {
-  PerevodeScreen({Key key}) : super(key: key);
+  const PerevodeScreen({Key? key}) : super(key: key);
 
   @override
   _PerevodeScreenState createState() => _PerevodeScreenState();
@@ -22,11 +20,14 @@ TextEditingController controller3 = TextEditingController();
 
 void load(BuildContext context) async {
   ag = await getLoadList(context);
-  if (ag != null)
-    getCreatHistory(context, controller1.text, double.parse(controller2.text),
-        controller3.text);
-  else
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+
+  if (ag != null) {
+    getCreatHistory(context, controller1.text,
+        double.parse(controller2.text.replaceAll(",", ".")), controller3.text);
+  } else {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Login()));
+  }
 }
 
 class _PerevodeScreenState extends State<PerevodeScreen> {
@@ -36,7 +37,7 @@ class _PerevodeScreenState extends State<PerevodeScreen> {
       body: Column(
         children: [
           logo(context, Colors.black),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
             child: Center(
@@ -56,7 +57,7 @@ class _PerevodeScreenState extends State<PerevodeScreen> {
                     context, "Коментарий", controller3, false, Colors.black)),
           ),
           buttonPerevode(context, "Перевод"),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );
@@ -70,7 +71,7 @@ Widget buttonPerevode(BuildContext context, String hint) {
     },
     child: Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [

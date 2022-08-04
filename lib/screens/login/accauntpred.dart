@@ -6,18 +6,18 @@ Widget accpred(BuildContext context) {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text("Нет аккаунта?",
+        const Text("Нет аккаунта?",
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.w400,
                 fontFamily: "Montserrat")),
         GestureDetector(
-          onTap: (){
+          onTap: () {
             Navigator.push(context,
-        MaterialPageRoute(builder: (context) => Registr()));
+                MaterialPageRoute(builder: (context) => const Registr()));
           },
-          child: Text("Регистрация",
+          child: const Text("Регистрация",
               style: TextStyle(
                   color: Color.fromRGBO(62, 76, 200, 1),
                   fontSize: 20,

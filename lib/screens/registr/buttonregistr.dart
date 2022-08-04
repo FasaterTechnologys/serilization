@@ -1,10 +1,13 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 
 Widget buttonLogin(BuildContext context, String hint) {
   return Container(
     decoration: BoxDecoration(
-      gradient: LinearGradient(
+      gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
@@ -20,7 +23,9 @@ Widget buttonLogin(BuildContext context, String hint) {
       child: Text(hint,
           style: TextStyle(
               color: Colors.white,
-              fontSize: (MediaQuery.of(context).size.width + MediaQuery.of(context).size.height) * 0.03,
+              fontSize: (MediaQuery.of(context).size.width +
+                      MediaQuery.of(context).size.height) *
+                  0.03,
               fontWeight: FontWeight.w300,
               fontFamily: "Montserrat")),
     ),

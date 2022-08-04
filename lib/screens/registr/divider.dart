@@ -6,8 +6,7 @@ Widget divider(BuildContext context) {
     width: MediaQuery.of(context).size.width *
         100 /
         MediaQuery.of(context).size.width,
-    
-    child: Divider(
+    child: const Divider(
       height: 0.001,
       thickness: 3,
       color: Colors.white,

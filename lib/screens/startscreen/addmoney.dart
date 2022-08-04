@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/screens/startscreen/perevodscreen.dart';
-import 'package:testapp/serelization/historycreat.dart';
-import 'package:testapp/serelization/serilhistory.dart';
-
-import '../../peremen.dart';
 
 Widget addmoney(
   BuildContext context,
@@ -17,7 +13,7 @@ Widget addmoney(
       Center(
         child: Text(
           hint,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white, fontSize: 10, fontWeight: FontWeight.w700),
         ),
       ),
@@ -27,7 +23,7 @@ Widget addmoney(
       GestureDetector(
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => PerevodeScreen()));
+              MaterialPageRoute(builder: (context) => const PerevodeScreen()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width * 0.13,

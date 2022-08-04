@@ -1,3 +1,5 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe, prefer_typing_uninitialized_variables, avoid_print, duplicate_ignore
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -5,17 +7,15 @@ import 'package:http/http.dart' as http;
 import 'package:testapp/peremen.dart';
 import 'package:testapp/screens/login/login.dart';
 
-import '../loadservic.dart';
-
 class Load {
-  String servic;
-  String password;
-  int id;
-  String name;
-  String namefam;
-  String otchestvo;
+  var servic;
+  var password;
+  var id;
+  var name;
+  var namefam;
+  var otchestvo;
   var schet;
-  int root;
+  var root;
   Load({
     this.servic,
     this.password,
@@ -27,6 +27,7 @@ class Load {
     this.root,
   });
   factory Load.fromJson(Map<String, dynamic> json) {
+    // ignore: avoid_print
     print("Упешная обработка!");
 
     return Load(
@@ -57,6 +58,8 @@ Future<Load> getLoadList(BuildContext context) async {
   if (response.statusCode == 200 && jsonAdress != false) {
     return Load.fromJson(jsonAdress);
   } else {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Login()));
+    return Load.fromJson(jsonAdress);
   }
 }

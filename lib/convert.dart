@@ -7,7 +7,7 @@ String toSpaceSeparatedString(String s) {
     if (s[i] == ".") {
       doubleint = true;
     } else if (doubleint == true) {
-      for (int j = i; j < s.length;j++) {
+      for (int j = i; j < s.length; j++) {
         don = don + s[j];
       }
       break;
@@ -20,7 +20,8 @@ String toSpaceSeparatedString(String s) {
     result = result.replaceRange(i, i, ' ');
     i -= n;
   }
-  if(doubleint == true)
-  result = result + "," + don;
+  if (doubleint == true) {
+    result = result + "," + don;
+  }
   return result;
 }
